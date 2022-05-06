@@ -14,6 +14,10 @@
 		693FB54D2824A1A100BC9697 /* DogFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB54C2824A1A100BC9697 /* DogFactsTests.swift */; };
 		693FB5572824A1A100BC9697 /* DogFactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5562824A1A100BC9697 /* DogFactsUITests.swift */; };
 		693FB5592824A1A100BC9697 /* DogFactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5582824A1A100BC9697 /* DogFactsUITestsLaunchTests.swift */; };
+		693FB56B2824CA5500BC9697 /* DogFactsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5682824CA5500BC9697 /* DogFactsCommon.swift */; };
+		693FB56C2824CA5500BC9697 /* DogFactsLiveDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5692824CA5500BC9697 /* DogFactsLiveDataFetcher.swift */; };
+		693FB56D2824CA5500BC9697 /* DogFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB56A2824CA5500BC9697 /* DogFactsService.swift */; };
+		693FB56F2824CC1900BC9697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693FB56E2824CC1900BC9697 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		693FB5522824A1A100BC9697 /* DogFactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogFactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		693FB5562824A1A100BC9697 /* DogFactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsUITests.swift; sourceTree = "<group>"; };
 		693FB5582824A1A100BC9697 /* DogFactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		693FB5682824CA5500BC9697 /* DogFactsCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsCommon.swift; sourceTree = "<group>"; };
+		693FB5692824CA5500BC9697 /* DogFactsLiveDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsLiveDataFetcher.swift; sourceTree = "<group>"; };
+		693FB56A2824CA5500BC9697 /* DogFactsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsService.swift; sourceTree = "<group>"; };
+		693FB56E2824CC1900BC9697 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +103,9 @@
 		693FB5392824A19F00BC9697 /* DogFacts */ = {
 			isa = PBXGroup;
 			children = (
-				693FB53A2824A19F00BC9697 /* AppDelegate.swift */,
-				693FB53C2824A19F00BC9697 /* ViewController.swift */,
-				693FB53E2824A1A100BC9697 /* Assets.xcassets */,
-				693FB5402824A1A100BC9697 /* Main.storyboard */,
+				693FB5652824C9F500BC9697 /* App */,
+				693FB5672824CA3100BC9697 /* Service */,
+				693FB5662824CA0C00BC9697 /* UI */,
 				693FB5432824A1A100BC9697 /* DogFacts.entitlements */,
 			);
 			path = DogFacts;
@@ -119,6 +126,35 @@
 				693FB5582824A1A100BC9697 /* DogFactsUITestsLaunchTests.swift */,
 			);
 			path = DogFactsUITests;
+			sourceTree = "<group>";
+		};
+		693FB5652824C9F500BC9697 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				693FB53A2824A19F00BC9697 /* AppDelegate.swift */,
+				693FB53E2824A1A100BC9697 /* Assets.xcassets */,
+				693FB56E2824CC1900BC9697 /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		693FB5662824CA0C00BC9697 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				693FB53C2824A19F00BC9697 /* ViewController.swift */,
+				693FB5402824A1A100BC9697 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		693FB5672824CA3100BC9697 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				693FB5682824CA5500BC9697 /* DogFactsCommon.swift */,
+				693FB5692824CA5500BC9697 /* DogFactsLiveDataFetcher.swift */,
+				693FB56A2824CA5500BC9697 /* DogFactsService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FB56F2824CC1900BC9697 /* Main.storyboard in Resources */,
 				693FB53F2824A1A100BC9697 /* Assets.xcassets in Resources */,
 				693FB5422824A1A100BC9697 /* Main.storyboard in Resources */,
 			);
@@ -251,8 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693FB56D2824CA5500BC9697 /* DogFactsService.swift in Sources */,
 				693FB53D2824A19F00BC9697 /* ViewController.swift in Sources */,
 				693FB53B2824A19F00BC9697 /* AppDelegate.swift in Sources */,
+				693FB56C2824CA5500BC9697 /* DogFactsLiveDataFetcher.swift in Sources */,
+				693FB56B2824CA5500BC9697 /* DogFactsCommon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7R2A5774NX;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -451,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7R2A5774NX;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
