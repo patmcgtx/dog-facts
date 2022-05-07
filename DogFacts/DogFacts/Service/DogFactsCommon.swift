@@ -14,13 +14,7 @@ protocol DogFactsDataFetcher {
     var urlPath: String { get set }
     
     /**
-     Old-school completion handler fetching
-     - Parameter completion: Closure to execute when the fetch attempt completes, indicating success or failure.
-     */
-    func fetchData(completion: @escaping (Result<Data, Error>) -> ())
-    
-    /**
-     The async/await  version 🤩
+     The async/await version 🤩
      - Returns: Raw dog fact data
      */
     func fetch() async throws -> Data

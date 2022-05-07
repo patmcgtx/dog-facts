@@ -14,22 +14,6 @@ struct DogFactsLiveDataFetcher: DogFactsDataFetcher {
         
     private let urlSession = URLSession.shared
 
-    /// Old-school completion block version
-    func fetchData(completion: @escaping (Result<Data, Error>) -> ()) {
-        if let url = URL(string: self.urlPath) {
-            let dataTask = self.urlSession.dataTask(with: url) { maybeData, maybeResponse, maybeError in
-                if let error = maybeError {
-                    completion(.failure(error))
-                } else if let data = maybeData {
-                    completion(.success(data))
-                }
-            }
-            dataTask.resume()
-        } else {
-            completion(.failure(Errors.badURL))
-        }
-    }
-        
     /// async/await  version 🤩
     func fetch() async throws -> Data {
         if let url = URL(string: self.urlPath) {
@@ -37,8 +21,7 @@ struct DogFactsLiveDataFetcher: DogFactsDataFetcher {
             return data
         } else {
             throw Errors.badURL
-        }
-    }
+        }    }
 
     
 }

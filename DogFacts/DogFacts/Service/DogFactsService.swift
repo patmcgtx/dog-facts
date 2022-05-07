@@ -28,29 +28,6 @@ struct DogFactsService {
         // Note I'm putting the URL here because this is where I decode the data from that URL.
         self.dataFetcher.urlPath = "https://dog-api.kinduff.com/api/facts"
     }
-
-    /**
-     The old-school completion block version.
-     - Parameter completion: Closure to execute when the fetch attempt completes, indicating success or failure.
-     */
-    func fetch(completion: @escaping (Result<String, Error>) -> ()) {
-        
-        self.dataFetcher.fetchData { result in
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success(let data):
-                do {
-                    let dogFacts = try JSONDecoder().decode(DogFacts.self, from: data)
-                    completion(.success(dogFacts.facts.first ?? "???"))
-                } catch {
-                    completion(.failure(error))
-                }
-            }
-        }
-    }
-        
-    // MARK: async/await function version
     
     /**
      The async/await function version. 🤩
@@ -72,8 +49,4 @@ struct DogFactsService {
         }
     }
 
-    
-    // MARK: Combine
-
-    // MARK: TODO Obj-C
 }
