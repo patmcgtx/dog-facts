@@ -29,16 +29,5 @@ struct DogFactsLiveDataFetcher: DogFactsDataFetcher {
             completion(.failure(Errors.badURL))
         }
     }
-        
-    /// async/await  version 🤩
-    func fetch() async throws -> Data {
-        if let url = URL(string: self.urlPath) {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            return data
-        } else {
-            throw Errors.badURL
-        }
-    }
-
     
 }

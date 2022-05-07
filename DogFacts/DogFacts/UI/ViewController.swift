@@ -23,20 +23,13 @@ class ViewController: NSViewController {
         }
         
         // The old completion-block call
-//        self.service.fetch { result in
-//            switch result {
-//            case .success(let dogFact): self.update(dogFact: dogFact)
-//            case .failure(let error): self.update(dogFact: error.localizedDescription)
-//            }
-//        }
-        
-        Task {
-            do {
-                self.update(dogFact: try await self.service.dogFact)
-            } catch {
-                self.update(dogFact: error.localizedDescription)
+        self.service.fetch { result in
+            switch result {
+            case .success(let dogFact): self.update(dogFact: dogFact)
+            case .failure(let error): self.update(dogFact: error.localizedDescription)
             }
-         }
+        }
+        
     }
     
     private func update(dogFact: String) {

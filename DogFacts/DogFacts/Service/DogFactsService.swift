@@ -52,28 +52,4 @@ struct DogFactsService {
         
     // MARK: async/await function version
     
-    /**
-     The async/await function version. 🤩
-     - Returns: A dog fact as a string
-     */
-    func fetch() async throws -> String {
-        let data = try await self.dataFetcher.fetch()
-        let dogFacts = try JSONDecoder().decode(DogFacts.self, from: data)
-        return dogFacts.facts.first ?? "???"
-    }
-    
-    /**
-     The async/await computed property version. 🤩
-     - Returns: A dog fact as a string
-     */
-    var dogFact: String {
-        get async throws {
-            return try await self.fetch()
-        }
-    }
-
-    
-    // MARK: Combine
-
-    // MARK: TODO Obj-C
 }

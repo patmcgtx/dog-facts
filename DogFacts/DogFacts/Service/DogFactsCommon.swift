@@ -19,11 +19,6 @@ protocol DogFactsDataFetcher {
      */
     func fetchData(completion: @escaping (Result<Data, Error>) -> ())
     
-    /**
-     The async/await  version 🤩
-     - Returns: Raw dog fact data
-     */
-    func fetch() async throws -> Data
  }
 
 enum Errors: Error {
