@@ -11,9 +11,9 @@ import Foundation
 struct DogFactsLiveDataFetcher: DogFactsDataFetcher {
     
     var urlPath: String = ""
-        
+    
     private let urlSession = URLSession.shared
-
+    
     /// async/await  version 🤩
     func fetch() async throws -> Data {
         if let url = URL(string: self.urlPath) {
@@ -21,7 +21,7 @@ struct DogFactsLiveDataFetcher: DogFactsDataFetcher {
             return data
         } else {
             throw Errors.badURL
-        }    }
-
+        }
+    }
     
 }
