@@ -7,12 +7,16 @@
 
 import Foundation
 
-/// Fetches dog facts and converts to a model
+/// Fetches dog facts and converts to a model.
 struct DogFactsService {
     
     private var dataFetcher: DogFactsDataFetcher
     
-    // The model coming back from the API
+    /**
+     The model coming back from the API.
+     
+     For example: `{"facts":["The earliest dog fossil dates back to nearly 10,000 B.C."],"success":true}`
+     */
     private struct DogFacts: Decodable {
         let facts: [String]
     }

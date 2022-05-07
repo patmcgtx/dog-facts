@@ -10,10 +10,10 @@ import Cocoa
 class ViewController: NSViewController {
 
     private let service = DogFactsService(dataFetcher: DogFactsLiveDataFetcher())
+    
     @IBOutlet weak var dogFactLabel: NSTextFieldCell!
     @IBOutlet weak var fetchButton: NSButton!
-    @IBOutlet weak var spinner: NSProgressIndicator!
-    
+    @IBOutlet weak var spinner: NSProgressIndicator!    
     @IBAction func fetchButtonPressed(_ sender: Any) {
         
         DispatchQueue.main.async {
