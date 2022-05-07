@@ -8,7 +8,7 @@
 import Foundation
 
 /// Fetches dog facts raw data from a live network endpoint
-struct DogFactsLiveDataFetcher: DogFactsDataFetcher {
+class DogFactsLiveDataFetcher: DogFactsDataFetcher {
     
     var urlPath: String = ""
     
