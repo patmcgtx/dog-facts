@@ -18,12 +18,19 @@ class DogFactsUITestsLaunchTests: XCTestCase {
     }
 
     func testLaunch() throws {
+        
+        // Launch
         let app = XCUIApplication()
         app.launch()
+        
+        let mainWindow = app.windows.firstMatch
+        XCTAssert(mainWindow.waitForExistence(timeout: 2.0))
+        
+        let fetchButton = mainWindow.buttons.firstMatch
+        XCTAssert(fetchButton.waitForExistence(timeout: 2.0))
+        XCTAssertEqual(fetchButton.title, "Fetch 🐶")
 
-        // Insert steps here to perform after app launch but before taking a screenshot,
-        // such as logging into a test account or navigating somewhere in the app
-
+        // Screenshot
         let attachment = XCTAttachment(screenshot: app.screenshot())
         attachment.name = "Launch Screen"
         attachment.lifetime = .keepAlways
