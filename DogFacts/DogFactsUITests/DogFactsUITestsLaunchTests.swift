@@ -35,11 +35,13 @@ class DogFactsUITestsLaunchTests: XCTestCase {
             return
         }
         
+        // Confirm the fetch button
         let fetchButton = window.buttons.firstMatch
         XCTAssert(fetchButton.waitForExistence(timeout: 2.0))
         XCTAssertEqual(fetchButton.title, "Fetch 🐶")
         XCTAssert(fetchButton.isEnabled)
         
+        // Confirm the initial dog fact
         let factText = window.staticTexts.firstMatch
         XCTAssert(factText.waitForExistence(timeout: 2.0))
         XCTAssertEqual(factText.value as? String, "In 1957, Laika became the first living being in space via an earth satellite and JFK’s terrier, Charlie, fathered 4 puppies with Laika’s daughter.")
@@ -52,20 +54,25 @@ class DogFactsUITestsLaunchTests: XCTestCase {
             return
         }
         
+        // Get the fetch button
         let fetchButton = window.buttons.firstMatch
         XCTAssert(fetchButton.waitForExistence(timeout: 2.0))
 
+        // Get the initial dog fact
         let factText = window.staticTexts.firstMatch
         XCTAssert(factText.waitForExistence(timeout: 2.0))
-        
         let initialFact = factText.value as? String
         XCTAssertNotNil(initialFact)
 
+        // Click the fetch button, confirming state before and after
         XCTAssertTrue(fetchButton.isEnabled)
         fetchButton.click()
         XCTAssertFalse(fetchButton.isEnabled)
         
-        // TODO patmcg wait for the fact to change
+        // Wait to make sure the confirm button got re-enabled
+        let buttonReenabledPredicate = NSPredicate(format: "isEnabled == true")
+        let buttonReenabledExpectation = expectation(for: buttonReenabledPredicate, evaluatedWith: fetchButton, handler: nil)
+        wait(for: [buttonReenabledExpectation], timeout: 5.0)
     }
 
 }
