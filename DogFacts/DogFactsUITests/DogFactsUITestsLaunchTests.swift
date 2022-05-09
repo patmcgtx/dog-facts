@@ -25,8 +25,6 @@ class DogFactsUITestsLaunchTests: XCTestCase {
         
         self.mainWindow = app.windows.firstMatch
         XCTAssertNotNil(self.mainWindow)
-        
-        // TODO patmcg set up mock data
     }
 
     func testLaunch() throws {
@@ -43,13 +41,15 @@ class DogFactsUITestsLaunchTests: XCTestCase {
         XCTAssert(fetchButton.isEnabled)
         
         // Confirm the initial dog fact
-        let dogFactLabel = window.staticTexts.firstMatch
-        XCTAssert(dogFactLabel.waitForExistence(timeout: timeout))
-        XCTAssertEqual(dogFactLabel.value as? String, "In 1957, Laika became the first living being in space via an earth satellite and JFK’s terrier, Charlie, fathered 4 puppies with Laika’s daughter.")
+        let factText = window.staticTexts.firstMatch
+        XCTAssert(factText.waitForExistence(timeout: timeout))
+        XCTAssertEqual(factText.value as? String, "In 1957, Laika became the first living being in space via an earth satellite and JFK’s terrier, Charlie, fathered 4 puppies with Laika’s daughter.")
     }
 
     func testFetch() throws {
-        
+                
+        // TODO patmcg set up mock data
+
         guard let window = self.mainWindow else {
             XCTFail("Failed to get window")
             return
@@ -62,8 +62,8 @@ class DogFactsUITestsLaunchTests: XCTestCase {
         // Get the initial dog fact
         let dogFactLabel = window.staticTexts.firstMatch
         XCTAssert(dogFactLabel.waitForExistence(timeout: timeout))
-        let initialFact = dogFactLabel.value as? String
-        XCTAssertNotNil(initialFact)
+        let initialDogFact = dogFactLabel.value as? String
+        XCTAssertNotNil(initialDogFact)
 
         // Click the fetch button, confirming state before and after
         XCTAssertTrue(fetchButton.isEnabled)
@@ -73,11 +73,11 @@ class DogFactsUITestsLaunchTests: XCTestCase {
         // Wait to make sure the confirm button got re-enabled
         let buttonReenabledPredicate = NSPredicate(format: "isEnabled == true")
         let buttonReenabledExpectation = expectation(for: buttonReenabledPredicate, evaluatedWith: fetchButton, handler: nil)
-        wait(for: [buttonReenabledExpectation], timeout: 5.0)
+        wait(for: [buttonReenabledExpectation], timeout: timeout)
 
         // Confirm that the dog fact changed
-        let updatedFact = dogFactLabel.value as? String
-        XCTAssertNotEqual(initialFact, updatedFact)
+        let updatedDogFact = dogFactLabel.value as? String
+        XCTAssertNotEqual(initialDogFact, updatedDogFact)
     }
 
 }
