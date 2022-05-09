@@ -1,13 +1,13 @@
 //
-//  DogFactsUITestsLaunchTests.swift
-//  DogFactsUITests
+//  DogFactsMobileUITestsLaunchTests.swift
+//  DogFactsMobileUITests
 //
-//  Created by Patrick McGonigle on 5/5/22.
+//  Created by Patrick McGonigle on 5/6/22.
 //
 
 import XCTest
 
-class DogFactsUITestsLaunchTests: XCTestCase {
+class DogFactsMobileUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
