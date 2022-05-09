@@ -10,6 +10,7 @@ import XCTest
 class DogFactsUITestsLaunchTests: XCTestCase {
 
     private let app = XCUIApplication()
+    private let timeout = 5.0
     private var mainWindow: XCUIElement?
     
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
@@ -37,14 +38,14 @@ class DogFactsUITestsLaunchTests: XCTestCase {
         
         // Confirm the fetch button
         let fetchButton = window.buttons.firstMatch
-        XCTAssert(fetchButton.waitForExistence(timeout: 2.0))
+        XCTAssert(fetchButton.waitForExistence(timeout: timeout))
         XCTAssertEqual(fetchButton.title, "Fetch 🐶")
         XCTAssert(fetchButton.isEnabled)
         
         // Confirm the initial dog fact
-        let factText = window.staticTexts.firstMatch
-        XCTAssert(factText.waitForExistence(timeout: 2.0))
-        XCTAssertEqual(factText.value as? String, "In 1957, Laika became the first living being in space via an earth satellite and JFK’s terrier, Charlie, fathered 4 puppies with Laika’s daughter.")
+        let dogFactLabel = window.staticTexts.firstMatch
+        XCTAssert(dogFactLabel.waitForExistence(timeout: timeout))
+        XCTAssertEqual(dogFactLabel.value as? String, "In 1957, Laika became the first living being in space via an earth satellite and JFK’s terrier, Charlie, fathered 4 puppies with Laika’s daughter.")
     }
 
     func testFetch() throws {
@@ -56,12 +57,12 @@ class DogFactsUITestsLaunchTests: XCTestCase {
         
         // Get the fetch button
         let fetchButton = window.buttons.firstMatch
-        XCTAssert(fetchButton.waitForExistence(timeout: 2.0))
+        XCTAssert(fetchButton.waitForExistence(timeout: timeout))
 
         // Get the initial dog fact
-        let factText = window.staticTexts.firstMatch
-        XCTAssert(factText.waitForExistence(timeout: 2.0))
-        let initialFact = factText.value as? String
+        let dogFactLabel = window.staticTexts.firstMatch
+        XCTAssert(dogFactLabel.waitForExistence(timeout: timeout))
+        let initialFact = dogFactLabel.value as? String
         XCTAssertNotNil(initialFact)
 
         // Click the fetch button, confirming state before and after
@@ -73,6 +74,10 @@ class DogFactsUITestsLaunchTests: XCTestCase {
         let buttonReenabledPredicate = NSPredicate(format: "isEnabled == true")
         let buttonReenabledExpectation = expectation(for: buttonReenabledPredicate, evaluatedWith: fetchButton, handler: nil)
         wait(for: [buttonReenabledExpectation], timeout: 5.0)
+
+        // Confirm that the dog fact changed
+        let updatedFact = dogFactLabel.value as? String
+        XCTAssertNotEqual(initialFact, updatedFact)
     }
 
 }
