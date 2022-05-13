@@ -15,3 +15,4 @@ Thanks to the [Dog API](https://kinduff.github.io/dog-api/) (@[GitHub](https://g
 The eventual plan is to support all the Apple platforms - iPhone, iPad, Watch, TV.
 
 I will start in AppKit on macOS, add iOS, and convert to SwiftUI as I add new platforms.
+
