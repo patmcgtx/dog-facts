@@ -6,14 +6,18 @@
 //
 
 import Cocoa
+import Combine
 
 class ViewController: NSViewController {
 
-    private let service = DogFactsService(dataFetcher: DogFactsLiveDataFetcher())
+    private let viewModel = DogFactsViewModel(service: LiveDogFactsService(dataFetcher: DogFactsLiveDataFetcher()))
     
     @IBOutlet weak var dogFactLabel: NSTextFieldCell!
     @IBOutlet weak var fetchButton: NSButton!
-    @IBOutlet weak var spinner: NSProgressIndicator!    
+    @IBOutlet weak var spinner: NSProgressIndicator!
+
+    private var subscription: AnyCancellable?
+    
     @IBAction func fetchButtonPressed(_ sender: Any) {
         
         DispatchQueue.main.async {
@@ -23,28 +27,44 @@ class ViewController: NSViewController {
         }
         
         Task {
-            do {
-                self.update(dogFact: try await self.service.dogFact)
-            } catch {
-                self.update(dogFact: error.localizedDescription)
-            }
+            await self.viewModel.fetch()
+            self.updateUI()
          }
     }
-    
-    private func update(dogFact: String) {
-        DispatchQueue.main.async {
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.subscription = self.viewModel.$state
+            .receive(on: DispatchQueue.main)
+            .sink { state in
+                self.updateUI()
+            }
+    }
+
+    private func updateUI() {
+        switch self.viewModel.state {
+        case .loading:
+            self.spinner.isHidden = false
+            self.spinner.startAnimation(self)
+            self.fetchButton.isEnabled = false
+            self.dogFactLabel.stringValue = "Loading"
+        case .loaded(let dogFact):
             self.spinner.isHidden = true
             self.spinner.stopAnimation(self)
             self.fetchButton.isEnabled = true
             self.dogFactLabel.stringValue = dogFact
+        case .failed(let error):
+            self.spinner.isHidden = true
+            self.spinner.stopAnimation(self)
+            self.fetchButton.isEnabled = true
+            self.dogFactLabel.stringValue = error.localizedDescription
+        case .idle:
+            self.spinner.isHidden = true
+            self.spinner.stopAnimation(self)
+            self.fetchButton.isEnabled = true
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.dogFactLabel.stringValue = "In 1957, Laika became the first living being in space via an earth satellite and JFK’s terrier, Charlie, fathered 4 puppies with Laika’s daughter."
-    }
-
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.

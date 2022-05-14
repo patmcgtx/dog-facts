@@ -7,8 +7,23 @@
 
 import Foundation
 
+// TODO patmcg Use protocol?  Is this even needed since I have a mockable data fetcher?
+protocol DogFactsService {
+    
+    /**
+     Fetches a new dog fact.
+     - Returns: A dog fact as a string
+     */
+    func fetch() async throws -> String
+    
+    /// async computed property version (just for fun)
+    var dogFact: String { get async throws }
+
+}
+
+
 /// Fetches dog facts and converts to a model.
-struct DogFactsService {
+struct LiveDogFactsService: DogFactsService {
     
     private var dataFetcher: DogFactsDataFetcher
     
@@ -31,22 +46,16 @@ struct DogFactsService {
         
         // Note I'm putting the URL here because this is where I decode the data from that URL.
         self.dataFetcher.urlPath = "https://dog-api.kinduff.com/api/facts"
-    }
+    }    
     
-    /**
-     The async/await function version. 🤩
-     - Returns: A dog fact as a string
-     */
+    // MARK: DogFactsService
+
     func fetch() async throws -> String {
         let data = try await self.dataFetcher.fetch()
         let dogFacts = try JSONDecoder().decode(DogFacts.self, from: data)
         return dogFacts.facts.first ?? "???"
     }
     
-    /**
-     The async/await computed property version. 🤩
-     - Returns: A dog fact as a string
-     */
     var dogFact: String {
         get async throws {
             return try await self.fetch()
