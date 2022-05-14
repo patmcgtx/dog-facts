@@ -18,14 +18,7 @@ class ViewController: NSViewController {
 
     private var subscription: AnyCancellable?
     
-    @IBAction func fetchButtonPressed(_ sender: Any) {
-        
-        DispatchQueue.main.async {
-            self.fetchButton.isEnabled = false
-            self.spinner.isHidden = false
-            self.spinner.startAnimation(self)
-        }
-        
+    @IBAction func fetchButtonPressed(_ sender: Any) {        
         Task {
             await self.viewModel.fetch()
             self.updateUI()
