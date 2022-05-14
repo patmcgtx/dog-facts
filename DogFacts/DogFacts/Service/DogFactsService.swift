@@ -15,10 +15,6 @@ protocol DogFactsService {
      - Returns: A dog fact as a string
      */
     func fetch() async throws -> String
-    
-    /// async computed property version (just for fun)
-    var dogFact: String { get async throws }
-
 }
 
 
@@ -46,7 +42,7 @@ struct LiveDogFactsService: DogFactsService {
         
         // Note I'm putting the URL here because this is where I decode the data from that URL.
         self.dataFetcher.urlPath = "https://dog-api.kinduff.com/api/facts"
-    }    
+    }
     
     // MARK: DogFactsService
 
@@ -54,12 +50,6 @@ struct LiveDogFactsService: DogFactsService {
         let data = try await self.dataFetcher.fetch()
         let dogFacts = try JSONDecoder().decode(DogFacts.self, from: data)
         return dogFacts.facts.first ?? "???"
-    }
-    
-    var dogFact: String {
-        get async throws {
-            return try await self.fetch()
-        }
-    }
+    }    
 
 }
