@@ -7,7 +7,7 @@
 
 import Foundation
 
-// TODO patmcg Use protocol?  Is this even needed since I have a mockable data fetcher?
+/// Protocol for fetching dog facts
 protocol DogFactsService {
     
     /**
