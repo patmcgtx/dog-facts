@@ -10,65 +10,54 @@ import XCTest
 
 class DogFactsViewModelTests: XCTestCase {
 
+    let service = DogFactsServiceMock()
+    var viewModel: DogFactsViewModel?
+
+    override func setUp() async throws {
+        self.viewModel = DogFactsViewModel(service: self.service)
+    }
+
     func testInitial() {
-        let service = DogFactsServiceMock()
-        let viewModel = DogFactsViewModel(service: service)
-        switch viewModel.state {
+        switch self.viewModel?.state {
         case .idle: print("Idle, as expcted")
-        default: XCTFail("Unexpected state: \(viewModel.state)")
+        default: XCTFail("Unexpected state: \(String(describing: viewModel?.state))")
         }
     }
 
     func testFetchSuccess() async {
         
-        let service = DogFactsServiceMock()
-        service.resultingFact = "Dogs are cool!"
-        let viewModel = DogFactsViewModel(service: service)
+        self.service.resultingFact = "Dogs are cool!"
         
-        switch viewModel.state {
+        switch self.viewModel?.state {
         case .idle: print("Idle, as expcted")
-        default: XCTFail("Unexpected state: \(viewModel.state)")
+        default: XCTFail("Unexpected state: \(String(describing: viewModel?.state))")
         }
         
-        await viewModel.fetch()
-        switch viewModel.state {
+        await self.viewModel?.fetch()
+        switch self.viewModel?.state {
         case .loaded(let dogFact): XCTAssertEqual(dogFact, "Dogs are cool!")
-        default: XCTFail("Unexpected state: \(viewModel.state)")
+        default: XCTFail("Unexpected state: \(String(describing: viewModel?.state))")
         }
     }
 
     func testFetchError() async {
         
-        let service = DogFactsServiceMock()
         service.resultingError = Errors.noResponse
-        let viewModel = DogFactsViewModel(service: service)
         
-        switch viewModel.state {
+        switch viewModel?.state {
         case .idle: print("Idle, as expcted")
-        default: XCTFail("Unexpected state: \(viewModel.state)")
+        default: XCTFail("Unexpected state: \(String(describing: viewModel?.state))")
         }
         
-        await viewModel.fetch()
-        switch viewModel.state {
+        await viewModel?.fetch()
+        switch viewModel?.state {
         case .failed(let error): XCTAssertEqual(error.self as? Errors, Errors.noResponse.self)
         default: XCTFail("Expected an error")
         }
     }
 
-    func testCombine() async {
-        
-        let service = DogFactsServiceMock()
-        service.resultingFact = "Dogs are way cool!"
-        let viewModel = DogFactsViewModel(service: service)
-        
-        // TODO patmcg...
-//        let subscription = viewModel.$state.receive(on: DispatchQueue.main)
-//            .sink { state in
-//                switch state {
-//                case .idle: print("Idle, as expected")
-//                default: XCTFail("Unexpected state: \(viewModel.state)")
-//                }
-//            }
+    func testCombine() async {        
+        // TODO patmcg... set up a way to test the COmbine binding
     }
     
 }
