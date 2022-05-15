@@ -1,5 +1,5 @@
 //
-//  DogFactsLiveDataFetcher.swift
+//  DogFactsDataFetcherLive.swift
 //  DocFactsMac
 //
 //  Created by Patrick McGonigle on 5/4/22.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// Fetches dog facts raw data from a live network endpoint
-class DogFactsLiveDataFetcher: DogFactsDataFetcher {
+class DogFactsDataFetcherLive: DogFactsDataFetcher {
     
     var urlPath: String = ""
     

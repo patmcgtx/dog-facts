@@ -43,7 +43,7 @@ class DogFactsUITests: XCTestCase {
         // Confirm the initial dog fact
         let factText = window.staticTexts.firstMatch
         XCTAssert(factText.waitForExistence(timeout: timeout))
-        XCTAssertEqual(factText.value as? String, "In 1957, Laika became the first living being in space via an earth satellite and JFK’s terrier, Charlie, fathered 4 puppies with Laika’s daughter.")
+        XCTAssertEqual(factText.value as? String, "")
     }
 
     func testFetch() throws {

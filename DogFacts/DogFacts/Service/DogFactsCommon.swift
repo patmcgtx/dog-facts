@@ -7,6 +7,21 @@
 
 import Foundation
 
+enum Errors: Error {
+    case badURL
+    case noResponse
+}
+
+/// Protocol for fetching dog facts
+protocol DogFactsService {
+    
+    /**
+     Fetches a new dog fact.
+     - Returns: A dog fact as a string
+     */
+    func fetch() async throws -> String
+}
+
 /// Fetches dog fact raw data
 protocol DogFactsDataFetcher {
     
@@ -20,7 +35,3 @@ protocol DogFactsDataFetcher {
     func fetch() async throws -> Data
  }
 
-enum Errors: Error {
-    case badURL
-    case noResponse
-}
