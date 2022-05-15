@@ -1,5 +1,5 @@
 //
-//  DogFactsService.swift
+//  DogFactsServiceLive.swift
 //  DocFactsMac
 //
 //  Created by Patrick McGonigle on 5/4/22.
@@ -7,19 +7,8 @@
 
 import Foundation
 
-/// Protocol for fetching dog facts
-protocol DogFactsService {
-    
-    /**
-     Fetches a new dog fact.
-     - Returns: A dog fact as a string
-     */
-    func fetch() async throws -> String
-}
-
-
 /// Fetches dog facts and converts to a model.
-struct LiveDogFactsService: DogFactsService {
+struct DogFactsServiceLive: DogFactsService {
     
     private var dataFetcher: DogFactsDataFetcher
     

@@ -16,7 +16,7 @@ class DogFactsServiceTests: XCTestCase {
     override func setUp() async throws {
         self.dataFetcher = MockDogFactsDataFetcher()
         if let fetcher = self.dataFetcher {
-            self.service = LiveDogFactsService(dataFetcher: fetcher)
+            self.service = DogFactsServiceLive(dataFetcher: fetcher)
         }
     }
 

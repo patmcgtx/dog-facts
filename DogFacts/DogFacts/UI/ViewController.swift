@@ -10,7 +10,7 @@ import Combine
 
 class ViewController: NSViewController {
 
-    private let viewModel = DogFactsViewModel(service: LiveDogFactsService(dataFetcher: DogFactsLiveDataFetcher()))
+    private let viewModel = DogFactsViewModel(service: DogFactsServiceLive(dataFetcher: DogFactsDataFetcherLive()))
     
     @IBOutlet weak var dogFactLabel: NSTextFieldCell!
     @IBOutlet weak var fetchButton: NSButton!
