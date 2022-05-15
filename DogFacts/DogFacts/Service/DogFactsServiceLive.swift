@@ -35,7 +35,7 @@ struct DogFactsServiceLive: DogFactsService {
     
     // MARK: DogFactsService
 
-    func fetch() async throws -> String {
+    func fetchDogFact() async throws -> String {
         let data = try await self.dataFetcher.fetch()
         let dogFacts = try JSONDecoder().decode(DogFacts.self, from: data)
         return dogFacts.facts.first ?? "???"

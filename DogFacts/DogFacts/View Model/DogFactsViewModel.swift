@@ -29,7 +29,7 @@ class DogFactsViewModel {
         self.state = .loading
         
         do {
-            let dogFact = try await self.service.fetch()
+            let dogFact = try await self.service.fetchDogFact()
             self.state = .loaded(dogFact: dogFact)
         } catch {
             self.state = .failed(error: error)

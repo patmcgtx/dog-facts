@@ -19,7 +19,7 @@ protocol DogFactsService {
      Fetches a new dog fact.
      - Returns: A dog fact as a string
      */
-    func fetch() async throws -> String
+    func fetchDogFact() async throws -> String
 }
 
 /// Fetches dog fact raw data

@@ -17,7 +17,7 @@ class DogFactsServiceMock: DogFactsService {
     /// The error to throw in `fetch()`, if any
     var resultingError: Error? = nil
 
-    func fetch() async throws -> String {
+    func fetchDogFact() async throws -> String {
         if let error = self.resultingError {
             throw error
         } else if let fact = self.resultingFact {

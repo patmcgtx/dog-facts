@@ -27,7 +27,7 @@ class DogFactsServiceTests: XCTestCase {
         
         self.dataFetcher?.set(response: json)
         
-        let result = try await self.service?.fetch()
+        let result = try await self.service?.fetchDogFact()
         XCTAssertEqual(result, fact)
     }
 
@@ -36,7 +36,7 @@ class DogFactsServiceTests: XCTestCase {
         self.dataFetcher?.set(response: "")
 
         do {
-            let _ = try await self.service?.fetch()
+            let _ = try await self.service?.fetchDogFact()
             XCTFail("Unexpected success")
         } catch {
             XCTAssertNotNil(error as? DecodingError)
@@ -50,7 +50,7 @@ class DogFactsServiceTests: XCTestCase {
         self.dataFetcher?.set(response: json)
         
         do {
-            let _ = try await self.service?.fetch()
+            let _ = try await self.service?.fetchDogFact()
             XCTFail("Unexpected success")
         } catch is DecodingError {
             print("Got decoding error as expected")
@@ -64,7 +64,7 @@ class DogFactsServiceTests: XCTestCase {
         self.dataFetcher?.resultingError = DogFacts.Errors.badURL
         
         do {
-            let _ = try await self.service?.fetch()
+            let _ = try await self.service?.fetchDogFact()
             XCTFail("Unexpected success")
         } catch DogFacts.Errors.badURL {
             print("Got badURL error as expected")
