@@ -1,5 +1,5 @@
 //
-//  MockDogFactsDataFetcher.swift
+//  DogFactsDataFetcherMock.swift
 //  DogFactsUITests
 //
 //  Created by Patrick McGonigle on 5/6/22.
@@ -8,7 +8,7 @@
 import Foundation
 @testable import DogFacts
 
-class MockDogFactsDataFetcher: DogFactsDataFetcher {
+class DogFactsDataFetcherMock: DogFactsDataFetcher {
 
     var urlPath: String = ""
     

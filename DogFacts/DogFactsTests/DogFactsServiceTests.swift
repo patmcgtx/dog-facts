@@ -10,11 +10,11 @@ import XCTest
 
 class DogFactsServiceTests: XCTestCase {
 
-    private var dataFetcher: MockDogFactsDataFetcher?
+    private var dataFetcher: DogFactsDataFetcherMock?
     private var service: DogFactsService?
     
     override func setUp() async throws {
-        self.dataFetcher = MockDogFactsDataFetcher()
+        self.dataFetcher = DogFactsDataFetcherMock()
         if let fetcher = self.dataFetcher {
             self.service = DogFactsServiceLive(dataFetcher: fetcher)
         }

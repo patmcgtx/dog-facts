@@ -27,7 +27,7 @@
 		693FB56C2824CA5500BC9697 /* DogFactsDataFetcherLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5692824CA5500BC9697 /* DogFactsDataFetcherLive.swift */; };
 		693FB56D2824CA5500BC9697 /* DogFactsServiceLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB56A2824CA5500BC9697 /* DogFactsServiceLive.swift */; };
 		693FB56F2824CC1900BC9697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693FB56E2824CC1900BC9697 /* Main.storyboard */; };
-		697D602B2825FA880026C7DE /* MockDogFactsDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697D602A2825FA880026C7DE /* MockDogFactsDataFetcher.swift */; };
+		697D602B2825FA880026C7DE /* DogFactsDataFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697D602A2825FA880026C7DE /* DogFactsDataFetcherMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,7 @@
 		693FB5692824CA5500BC9697 /* DogFactsDataFetcherLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsDataFetcherLive.swift; sourceTree = "<group>"; };
 		693FB56A2824CA5500BC9697 /* DogFactsServiceLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsServiceLive.swift; sourceTree = "<group>"; };
 		693FB56E2824CC1900BC9697 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		697D602A2825FA880026C7DE /* MockDogFactsDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDogFactsDataFetcher.swift; sourceTree = "<group>"; };
+		697D602A2825FA880026C7DE /* DogFactsDataFetcherMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsDataFetcherMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,7 +265,7 @@
 		697D60292825FA7B0026C7DE /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				697D602A2825FA880026C7DE /* MockDogFactsDataFetcher.swift */,
+				697D602A2825FA880026C7DE /* DogFactsDataFetcherMock.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -532,7 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				697D602B2825FA880026C7DE /* MockDogFactsDataFetcher.swift in Sources */,
+				697D602B2825FA880026C7DE /* DogFactsDataFetcherMock.swift in Sources */,
 				693FB54D2824A1A100BC9697 /* DogFactsServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
