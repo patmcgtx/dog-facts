@@ -23,7 +23,7 @@ class DogFactsServiceMock: DogFactsService {
         } else if let fact = self.resultingFact {
             return fact
         } else {
-            throw Errors.noResponse
+            throw DogFactsError.noResponse
         }
     }
     

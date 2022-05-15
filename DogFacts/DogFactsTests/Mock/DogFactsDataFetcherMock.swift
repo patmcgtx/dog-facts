@@ -36,7 +36,7 @@ class DogFactsDataFetcherMock: DogFactsDataFetcher {
         } else if let data = self.resultingData {
             return data
         } else {
-            throw Errors.noResponse
+            throw DogFactsError.noResponse
         }
     }
     

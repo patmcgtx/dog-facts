@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum Errors: Error {
+/// Errors used throughout the app
+enum DogFactsError: Error {
     case badURL
     case noResponse
 }

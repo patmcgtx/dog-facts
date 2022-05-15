@@ -61,12 +61,12 @@ class DogFactsServiceTests: XCTestCase {
 
     func testThrows() async throws {
         
-        self.dataFetcher?.resultingError = DogFacts.Errors.badURL
+        self.dataFetcher?.resultingError = DogFacts.DogFactsError.badURL
         
         do {
             let _ = try await self.service?.fetchDogFact()
             XCTFail("Unexpected success")
-        } catch DogFacts.Errors.badURL {
+        } catch DogFacts.DogFactsError.badURL {
             print("Got badURL error as expected")
         } catch {
             XCTFail("Unexpected error type")

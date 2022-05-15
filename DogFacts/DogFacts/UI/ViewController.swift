@@ -8,6 +8,7 @@
 import Cocoa
 import Combine
 
+/// Storyboard-based view for the dog facts
 class ViewController: NSViewController {
 
     private let viewModel = DogFactsViewModel(service: DogFactsServiceLive(dataFetcher: DogFactsDataFetcherLive()))
@@ -20,12 +21,16 @@ class ViewController: NSViewController {
     
     @IBAction func fetchButtonPressed(_ sender: Any) {        
         Task {
+            // Trigger a reload on the view model
             await self.viewModel.fetch()
          }
     }
         
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        // React and update when the view model's state changes
         self.subscription = self.viewModel.$state
             .receive(on: DispatchQueue.main)
             .sink { state in

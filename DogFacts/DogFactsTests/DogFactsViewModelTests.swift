@@ -42,7 +42,7 @@ class DogFactsViewModelTests: XCTestCase {
 
     func testFetchError() async {
         
-        service.resultingError = Errors.noResponse
+        service.resultingError = DogFactsError.noResponse
         
         switch viewModel?.state {
         case .idle: print("Idle, as expcted")
@@ -51,7 +51,7 @@ class DogFactsViewModelTests: XCTestCase {
         
         await viewModel?.fetch()
         switch viewModel?.state {
-        case .failed(let error): XCTAssertEqual(error.self as? Errors, Errors.noResponse.self)
+        case .failed(let error): XCTAssertEqual(error.self as? DogFactsError, DogFactsError.noResponse.self)
         default: XCTFail("Expected an error")
         }
     }

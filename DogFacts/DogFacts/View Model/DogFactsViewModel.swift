@@ -7,8 +7,10 @@
 
 import Combine
 
+/// View model for the dog facts view
 class DogFactsViewModel {
     
+    /// The state the dog facts view can take on.
     enum State {
         case idle
         case loading
@@ -16,7 +18,9 @@ class DogFactsViewModel {
         case failed(error: Error)
     }
     
+    /// The current state for the dog facts view; Combine-observable.
     @Published private(set) var state: State = .idle
+    
     private let service: DogFactsService
     
     init(service: DogFactsService) {
