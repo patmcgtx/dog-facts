@@ -21,7 +21,6 @@ class ViewController: NSViewController {
     @IBAction func fetchButtonPressed(_ sender: Any) {        
         Task {
             await self.viewModel.fetch()
-            self.updateUI()
          }
     }
         
@@ -40,7 +39,7 @@ class ViewController: NSViewController {
             self.spinner.isHidden = false
             self.spinner.startAnimation(self)
             self.fetchButton.isEnabled = false
-            self.dogFactLabel.stringValue = "Loading"
+            self.dogFactLabel.stringValue = "Loading..."
         case .loaded(let dogFact):
             self.spinner.isHidden = true
             self.spinner.stopAnimation(self)
