@@ -33,6 +33,8 @@ class DogFactsServiceTests: XCTestCase {
 
     func testEmptyResponse() async throws {
         
+        self.dataFetcher?.set(response: "")
+
         do {
             let _ = try await self.service?.fetch()
             XCTFail("Unexpected success")

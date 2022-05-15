@@ -12,7 +12,7 @@ class DogFactsViewModel {
     enum State {
         case idle
         case loading
-        case loaded(docFact: String)
+        case loaded(dogFact: String)
         case failed(error: Error)
     }
     
@@ -30,7 +30,7 @@ class DogFactsViewModel {
         
         do {
             let dogFact = try await self.service.fetch()
-            self.state = .loaded(docFact: dogFact)
+            self.state = .loaded(dogFact: dogFact)
         } catch {
             self.state = .failed(error: error)
         }

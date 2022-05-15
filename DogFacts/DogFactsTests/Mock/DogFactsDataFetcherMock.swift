@@ -8,6 +8,7 @@
 import Foundation
 @testable import DogFacts
 
+/// A mockable version of a `DogFactsDataFetcher` for local testing
 class DogFactsDataFetcherMock: DogFactsDataFetcher {
 
     var urlPath: String = ""
@@ -29,14 +30,13 @@ class DogFactsDataFetcherMock: DogFactsDataFetcher {
      - Otherwise, if `resultingData` is set, then it is returned.
      - If neither are set, then empty data is returned.
      */
-    func fetch() async throws -> Data {
-        
+    func fetch() async throws -> Data {        
         if let error = self.resultingError {
             throw error
         } else if let data = self.resultingData {
             return data
         } else {
-            return Data()
+            throw Errors.noResponse
         }
     }
     
