@@ -1,7 +1,7 @@
 # Dog Facts App
 A macOS app that shows random dog facts. 🤷🏻‍♂️ 
 
-Basically it's a simple playground to try out new things in Swift, such as [async/await](https://youtu.be/iGNxhCdRuSU), [SwiftUI](https://developer.apple.com/xcode/swiftui/), [Xcode Cloud](https://developer.apple.com/xcode-cloud/), etc.
+This project is kept as small and simple as possible to try out new concepts in Swift, such as [async/await](https://youtu.be/iGNxhCdRuSU), [SwiftUI](https://developer.apple.com/xcode/swiftui/), [Xcode Cloud](https://developer.apple.com/xcode-cloud/), etc.
 
 ### API
 
