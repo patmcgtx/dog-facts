@@ -60,11 +60,11 @@ struct ContentView: View {
                     .padding(.bottom, 16.0)
             }
         }
-//        .onAppear {
-//            Task {
-//                try await self.dogFactsService.fetch()
-//            }
-//        }
+        .onAppear {
+            Task {
+                await self.viewModel.fetch()
+            }
+        }
     }
 }
 
