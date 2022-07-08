@@ -21,6 +21,7 @@ struct ContentView: View {
                     .padding(.top, 16.0)
                 Spacer()
                 Button {
+                    // TODO patmcg make Button stay in the same place with new dog facts
                     Task {
                         await self.viewModel.fetch()
                     }
@@ -44,6 +45,7 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                         .padding([.top, .leading, .trailing])
                 case .failed(let error):
+                    // TODO patmcg reuse ^ Text
                     Text(error.localizedDescription)
                         .font(.callout)
                         .foregroundColor(Color.red)
@@ -51,6 +53,7 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                         .padding([.top, .leading, .trailing])
                 case .loading, .idle:
+                    // TODO patmcg add spinner
                     Text("...")
                 }
                 Spacer()

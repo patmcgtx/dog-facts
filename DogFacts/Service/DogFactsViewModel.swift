@@ -30,7 +30,7 @@ class DogFactsViewModel: ObservableObject {
     
     /// Triggers a fetch of a new dog fact and updates the state
     func fetch() async {
-        self.state = .loading        
+        self.state = .loading
         do {
             let dogFact = try await self.service.fetchDogFact()
             self.state = .loaded(dogFact: dogFact)
