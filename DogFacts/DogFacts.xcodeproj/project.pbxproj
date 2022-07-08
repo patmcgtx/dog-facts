@@ -17,6 +17,14 @@
 		691EAE272877A65C0093A527 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EADFE2877A65A0093A527 /* ContentView.swift */; };
 		691EAE282877A65C0093A527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691EADFF2877A65B0093A527 /* Assets.xcassets */; };
 		691EAE292877A65C0093A527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691EADFF2877A65B0093A527 /* Assets.xcassets */; };
+		691EAE372877E3450093A527 /* DogFactsServiceLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB56A2824CA5500BC9697 /* DogFactsServiceLive.swift */; };
+		691EAE382877E3460093A527 /* DogFactsServiceLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB56A2824CA5500BC9697 /* DogFactsServiceLive.swift */; };
+		691EAE392877E34B0093A527 /* DogFactsDataFetcherLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5692824CA5500BC9697 /* DogFactsDataFetcherLive.swift */; };
+		691EAE3A2877E34C0093A527 /* DogFactsDataFetcherLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5692824CA5500BC9697 /* DogFactsDataFetcherLive.swift */; };
+		691EAE3B2877E3560093A527 /* DogFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C9B2A28306A0B00F1CC45 /* DogFactsViewModel.swift */; };
+		691EAE3C2877E3570093A527 /* DogFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C9B2A28306A0B00F1CC45 /* DogFactsViewModel.swift */; };
+		691EAE3D2877E35B0093A527 /* DogFactsServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5682824CA5500BC9697 /* DogFactsServiceInterface.swift */; };
+		691EAE3E2877E35B0093A527 /* DogFactsServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FB5682824CA5500BC9697 /* DogFactsServiceInterface.swift */; };
 		693C9B2B28306A0B00F1CC45 /* DogFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C9B2A28306A0B00F1CC45 /* DogFactsViewModel.swift */; };
 		693C9B2D2830B50600F1CC45 /* DogFactsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C9B2C2830B50600F1CC45 /* DogFactsViewModelTests.swift */; };
 		693C9B2F2830B59500F1CC45 /* DogFactsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C9B2E2830B59500F1CC45 /* DogFactsServiceMock.swift */; };
@@ -243,14 +251,6 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
-		693C9B29283069DF00F1CC45 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				693C9B2A28306A0B00F1CC45 /* DogFactsViewModel.swift */,
-			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
 		693E0BCF2826133200C9F4AC /* DogFactsMobile */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				693FB5672824CA3100BC9697 /* Service */,
-				693C9B29283069DF00F1CC45 /* View Model */,
 				691EADFC2877A65A0093A527 /* SwiftUI */,
 				691EAE0A2877A65B0093A527 /* macOS */,
 				693FB54B2824A1A100BC9697 /* DogFactsTests */,
@@ -369,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				693FB5682824CA5500BC9697 /* DogFactsServiceInterface.swift */,
+				693C9B2A28306A0B00F1CC45 /* DogFactsViewModel.swift */,
 				693FB5692824CA5500BC9697 /* DogFactsDataFetcherLive.swift */,
 				693FB56A2824CA5500BC9697 /* DogFactsServiceLive.swift */,
 			);
@@ -725,6 +725,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				691EAE262877A65C0093A527 /* ContentView.swift in Sources */,
+				691EAE3B2877E3560093A527 /* DogFactsViewModel.swift in Sources */,
+				691EAE372877E3450093A527 /* DogFactsServiceLive.swift in Sources */,
+				691EAE392877E34B0093A527 /* DogFactsDataFetcherLive.swift in Sources */,
+				691EAE3D2877E35B0093A527 /* DogFactsServiceInterface.swift in Sources */,
 				691EAE242877A65C0093A527 /* DogFactsSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,6 +738,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				691EAE272877A65C0093A527 /* ContentView.swift in Sources */,
+				691EAE3C2877E3570093A527 /* DogFactsViewModel.swift in Sources */,
+				691EAE382877E3460093A527 /* DogFactsServiceLive.swift in Sources */,
+				691EAE3A2877E34C0093A527 /* DogFactsDataFetcherLive.swift in Sources */,
+				691EAE3E2877E35B0093A527 /* DogFactsServiceInterface.swift in Sources */,
 				691EAE252877A65C0093A527 /* DogFactsSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

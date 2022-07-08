@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-//    @EnvironmentObject var dogFactsService: DogFactsServiceLive
+    @StateObject var viewModel = DogFactsViewModel(service: DogFactsServiceLive(dataFetcher: DogFactsDataFetcherLive()))
     
     var body: some View {
         VStack {
@@ -21,9 +21,9 @@ struct ContentView: View {
                     .padding(.top, 16.0)
                 Spacer()
                 Button {
-//                    Task {
-//                        try await self.dogFactsService.fetch()
-//                    }
+                    Task {
+                        await self.viewModel.fetch()
+                    }
                 } label: {
                     Text("Fetch 🐶")
                         .fontWeight(.heavy)
@@ -35,13 +35,24 @@ struct ContentView: View {
                                 .stroke(.brown, lineWidth: 3)
                         )
                 }
-//                Text(self.dogFactsService.dogFact)
-                Text("Dog fact")
-                    .font(.callout)
-                    .foregroundColor(Color.brown)
-                    .bold()
-                    .multilineTextAlignment(.center)
-                    .padding([.top, .leading, .trailing])
+                switch self.viewModel.state {
+                case .loaded(let dogFact):
+                    Text(dogFact)
+                        .font(.callout)
+                        .foregroundColor(Color.brown)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .padding([.top, .leading, .trailing])
+                case .failed(let error):
+                    Text(error.localizedDescription)
+                        .font(.callout)
+                        .foregroundColor(Color.red)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .padding([.top, .leading, .trailing])
+                case .loading, .idle:
+                    Text("...")
+                }
                 Spacer()
                 Text("Brought to you by Dog Facts®")
                     .font(.footnote)

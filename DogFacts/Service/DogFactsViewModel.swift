@@ -8,7 +8,7 @@
 import Combine
 
 /// View model for the dog facts view
-class DogFactsViewModel {
+class DogFactsViewModel: ObservableObject {
     
     /// The state the dog facts view can take on.
     enum State {

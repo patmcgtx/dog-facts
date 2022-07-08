@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct DogFactsSwiftUIApp: App {
+struct DogFactsSwiftUIApp: App {    
     var body: some Scene {
         WindowGroup {
             ContentView()
