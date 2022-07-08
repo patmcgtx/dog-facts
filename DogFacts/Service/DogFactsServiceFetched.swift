@@ -1,5 +1,5 @@
 //
-//  DogFactsServiceLive.swift
+//  DogFactsServiceFetched.swift
 //  DocFactsMac
 //
 //  Created by Patrick McGonigle on 5/4/22.
@@ -8,9 +8,15 @@
 import Foundation
 
 /// Fetches dog facts and converts to a model.
-struct DogFactsServiceLive: DogFactsService {
+struct DogFactsServiceFetched: DogFactsService {
     
-    private var dataFetcher: DogFactsDataFetcher
+    private let dataFetcher: DogFactsDataFetcher
+    
+    /// Creates a `DogFactsServiceLive`
+    /// - Parameter dataFetcher: Optionally provide a custom data fetcher; defaults to live network query.
+    init(dataFetcher: DogFactsDataFetcher = DogFactsDataFetcherNetwork()) {
+        self.dataFetcher = dataFetcher
+    }
     
     /**
      The model coming back from the API.
@@ -19,18 +25,6 @@ struct DogFactsServiceLive: DogFactsService {
      */
     private struct DogFacts: Decodable {
         let facts: [String]
-    }
-
-    /**
-     Creates a DogFactsService.
-     - Parameter dataFetcher: The service to inject to fetch the raw dog fact data
-     */
-    init(dataFetcher: DogFactsDataFetcher) {
-        
-        self.dataFetcher = dataFetcher
-        
-        // Note I'm putting the URL here because this is where I decode the data from that URL.
-        self.dataFetcher.urlPath = "https://dog-api.kinduff.com/api/facts"
     }
     
     // MARK: DogFactsService

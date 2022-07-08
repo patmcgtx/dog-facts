@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var viewModel = DogFactsViewModel(service: DogFactsServiceLive(dataFetcher: DogFactsDataFetcherLive()))
+    @StateObject var viewModel = DogFactsViewModel(service: DogFactsServiceFetched())
     
     var body: some View {
         VStack {

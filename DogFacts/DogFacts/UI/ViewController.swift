@@ -11,7 +11,7 @@ import Combine
 /// Storyboard-based view for the dog facts
 class ViewController: NSViewController {
 
-    private let viewModel = DogFactsViewModel(service: DogFactsServiceLive(dataFetcher: DogFactsDataFetcherLive()))
+    private let viewModel = DogFactsViewModel(service: DogFactsServiceFetched())
     
     @IBOutlet weak var dogFactLabel: NSTextFieldCell!
     @IBOutlet weak var fetchButton: NSButton!

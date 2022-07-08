@@ -10,11 +10,11 @@ import XCTest
 
 class DogFactsViewModelTests: XCTestCase {
 
-    let service = DogFactsServiceMock()
+    let mockService = DogFactsServiceMocked()
     var viewModel: DogFactsViewModel?
 
     override func setUp() async throws {
-        self.viewModel = DogFactsViewModel(service: self.service)
+        self.viewModel = DogFactsViewModel(service: self.mockService)
     }
 
     func testInitial() {
@@ -26,7 +26,7 @@ class DogFactsViewModelTests: XCTestCase {
 
     func testFetchSuccess() async {
         
-        self.service.resultingFact = "Dogs are cool!"
+        self.mockService.mockedFact = "Dogs are cool!"
         
         switch self.viewModel?.state {
         case .idle: print("Idle, as expcted")
@@ -42,7 +42,7 @@ class DogFactsViewModelTests: XCTestCase {
 
     func testFetchError() async {
         
-        service.resultingError = DogFactsError.noResponse
+        mockService.mockedError = DogFactsError.noResponse
         
         switch viewModel?.state {
         case .idle: print("Idle, as expcted")

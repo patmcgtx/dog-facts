@@ -21,6 +21,7 @@ class DogFactsViewModel: ObservableObject {
     /// The current state for the dog facts view; Combine-observable.
     @Published private(set) var state: State = .idle
     
+    /// The backing service to use; could be live or mock 🤷🏻‍♂️
     private let service: DogFactsService
     
     init(service: DogFactsService) {
@@ -29,9 +30,7 @@ class DogFactsViewModel: ObservableObject {
     
     /// Triggers a fetch of a new dog fact and updates the state
     func fetch() async {
-        
-        self.state = .loading
-        
+        self.state = .loading        
         do {
             let dogFact = try await self.service.fetchDogFact()
             self.state = .loaded(dogFact: dogFact)

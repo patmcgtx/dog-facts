@@ -9,19 +9,17 @@ import Foundation
 @testable import DogFacts
 
 /// A mockable version of a `DogFactsDataFetcher` for local testing
-class DogFactsDataFetcherMock: DogFactsDataFetcher {
+class DogFactsDataFetcherMocked: DogFactsDataFetcher {
 
-    var urlPath: String = ""
-    
     /// The data to return in `fetch()`, if any
-    var resultingData: Data? = nil
+    var mockedData: Data? = nil
 
     /// The error to throw in `fetch()`, if any
-    var resultingError: Error? = nil
+    var mockedError: Error? = nil
     
     /// Convenient way to set the response data as a string
-    func set(response: String) {
-        self.resultingData = response.data(using: .utf8)
+    func apply(response: String) {
+        self.mockedData = response.data(using: .utf8)
     }
     
     /**
@@ -31,9 +29,9 @@ class DogFactsDataFetcherMock: DogFactsDataFetcher {
      - If neither are set, then empty data is returned.
      */
     func fetch() async throws -> Data {        
-        if let error = self.resultingError {
+        if let error = self.mockedError {
             throw error
-        } else if let data = self.resultingData {
+        } else if let data = self.mockedData {
             return data
         } else {
             throw DogFactsError.noResponse
