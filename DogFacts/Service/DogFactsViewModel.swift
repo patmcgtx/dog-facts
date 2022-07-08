@@ -29,6 +29,7 @@ class DogFactsViewModel: ObservableObject {
     }
     
     /// Triggers a fetch of a new dog fact and updates the state
+    @MainActor
     func fetch() async {
         self.state = .loading
         do {
