@@ -20,7 +20,6 @@ struct ContentView: View {
                 .padding(.top, 16.0)
             Spacer()
             Button {
-                // TODO patmcg make Button stay in the same place with new dog facts
                 Task {
                     await self.viewModel.fetch()
                 }
@@ -43,17 +42,18 @@ struct ContentView: View {
                     .bold()
                     .multilineTextAlignment(.center)
                     .padding([.top, .leading, .trailing])
+                    .frame(height: 200.0, alignment: Alignment.top)
             case .failed(let error):
-                // TODO patmcg reuse ^ Text
                 Text(error.localizedDescription)
                     .font(.callout)
                     .foregroundColor(Color.red)
                     .bold()
                     .multilineTextAlignment(.center)
                     .padding([.top, .leading, .trailing])
+                    .frame(height: 200.0, alignment: Alignment.top)
             case .loading, .idle:
-                // TODO patmcg add spinner
-                Text("...")
+                Text("")
+                    .frame(height: 200.0, alignment: Alignment.top)
             }
             Spacer()
             Text("Brought to you by Dog Facts®")
