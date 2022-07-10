@@ -13,55 +13,53 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                Text("Dog Facts®")
-                    .font(.title)
+            Text("Dog Facts®")
+                .font(.title)
+                .fontWeight(.heavy)
+                .foregroundColor(Color.brown)
+                .padding(.top, 16.0)
+            Spacer()
+            Button {
+                // TODO patmcg make Button stay in the same place with new dog facts
+                Task {
+                    await self.viewModel.fetch()
+                }
+            } label: {
+                Text("Fetch 🐶")
                     .fontWeight(.heavy)
-                    .foregroundColor(Color.brown)
-                    .padding(.top, 16.0)
-                Spacer()
-                Button {
-                    // TODO patmcg make Button stay in the same place with new dog facts
-                    Task {
-                        await self.viewModel.fetch()
-                    }
-                } label: {
-                    Text("Fetch 🐶")
-                        .fontWeight(.heavy)
-                        .padding()
-                        .foregroundColor(.brown)
-                        .border(.brown)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(.brown, lineWidth: 3)
-                        )
-                }
-                switch self.viewModel.state {
-                case .loaded(let dogFact):
-                    Text(dogFact)
-                        .font(.callout)
-                        .foregroundColor(Color.brown)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .padding([.top, .leading, .trailing])
-                case .failed(let error):
-                    // TODO patmcg reuse ^ Text
-                    Text(error.localizedDescription)
-                        .font(.callout)
-                        .foregroundColor(Color.red)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .padding([.top, .leading, .trailing])
-                case .loading, .idle:
-                    // TODO patmcg add spinner
-                    Text("...")
-                }
-                Spacer()
-                Text("Brought to you by Dog Facts®")
-                    .font(.footnote)
+                    .padding()
                     .foregroundColor(.brown)
-                    .padding(.bottom, 16.0)
+                    .border(.brown)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.brown, lineWidth: 3)
+                    )
             }
+            switch self.viewModel.state {
+            case .loaded(let dogFact):
+                Text(dogFact)
+                    .font(.callout)
+                    .foregroundColor(Color.brown)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding([.top, .leading, .trailing])
+            case .failed(let error):
+                // TODO patmcg reuse ^ Text
+                Text(error.localizedDescription)
+                    .font(.callout)
+                    .foregroundColor(Color.red)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding([.top, .leading, .trailing])
+            case .loading, .idle:
+                // TODO patmcg add spinner
+                Text("...")
+            }
+            Spacer()
+            Text("Brought to you by Dog Facts®")
+                .font(.footnote)
+                .foregroundColor(.brown)
+                .padding(.bottom, 16.0)
         }
         .onAppear {
             Task {
