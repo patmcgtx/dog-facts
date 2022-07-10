@@ -24,6 +24,7 @@ struct ContentView: View {
             } label: {
                 FetchButtonLabel()
             }
+            .buttonStyle(.bordered)
             switch self.viewModel.state {
             case .loaded(let dogFact):
                 DogFactView(text: dogFact)
@@ -71,11 +72,6 @@ struct ContentView: View {
                 .fontWeight(.heavy)
                 .padding()
                 .foregroundColor(GlobalStyling.textColor)
-                .border(GlobalStyling.textColor)
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(GlobalStyling.textColor, lineWidth: 3)
-                )
         }
     }
 
