@@ -30,7 +30,9 @@ struct ContentView: View {
             case .failed(let error):
                 DogFactView(text: error.localizedDescription, color: Color.red)
             case .loading, .idle:
-                DogFactView()
+                ProgressView()
+                    .padding([.top, .leading, .trailing])
+                    .frame(height: 200.0, alignment: Alignment.top)
             }
             Spacer()
             FooterView()
