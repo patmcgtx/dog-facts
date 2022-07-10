@@ -42,8 +42,7 @@ struct ContentView: View {
             case .failed(let error):
                 DogFactTextView(text: error.localizedDescription, color: Color.red)
             case .loading, .idle:
-                Text("")
-                    .frame(height: 200.0, alignment: Alignment.top)
+                DogFactTextView(text: "")
             }
             Spacer()
             Text("Brought to you by Dog Facts®")
