@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69105BE9287B05FD007BF0D0 /* GlobalStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69105BE8287B05FD007BF0D0 /* GlobalStyling.swift */; };
+		69105BEA287B05FD007BF0D0 /* GlobalStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69105BE8287B05FD007BF0D0 /* GlobalStyling.swift */; };
 		691EAE152877A65C0093A527 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EAE142877A65C0093A527 /* Tests_iOS.swift */; };
 		691EAE172877A65C0093A527 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EAE162877A65C0093A527 /* Tests_iOSLaunchTests.swift */; };
 		691EAE212877A65C0093A527 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EAE202877A65C0093A527 /* Tests_macOS.swift */; };
@@ -96,6 +98,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69105BE8287B05FD007BF0D0 /* GlobalStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyling.swift; sourceTree = "<group>"; };
 		691EADFD2877A65A0093A527 /* DogFactsSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsSwiftUIApp.swift; sourceTree = "<group>"; };
 		691EADFE2877A65A0093A527 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		691EADFF2877A65B0093A527 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 			children = (
 				691EADFD2877A65A0093A527 /* DogFactsSwiftUIApp.swift */,
 				691EADFE2877A65A0093A527 /* ContentView.swift */,
+				69105BE8287B05FD007BF0D0 /* GlobalStyling.swift */,
 				691EADFF2877A65B0093A527 /* Assets.xcassets */,
 			);
 			path = SwiftUI;
@@ -725,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				691EAE262877A65C0093A527 /* ContentView.swift in Sources */,
+				69105BE9287B05FD007BF0D0 /* GlobalStyling.swift in Sources */,
 				691EAE3B2877E3560093A527 /* DogFactsViewModel.swift in Sources */,
 				691EAE372877E3450093A527 /* DogFactsServiceFetched.swift in Sources */,
 				691EAE392877E34B0093A527 /* DogFactsDataFetcherNetwork.swift in Sources */,
@@ -738,6 +743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				691EAE272877A65C0093A527 /* ContentView.swift in Sources */,
+				69105BEA287B05FD007BF0D0 /* GlobalStyling.swift in Sources */,
 				691EAE3C2877E3570093A527 /* DogFactsViewModel.swift in Sources */,
 				691EAE382877E3460093A527 /* DogFactsServiceFetched.swift in Sources */,
 				691EAE3A2877E34C0093A527 /* DogFactsDataFetcherNetwork.swift in Sources */,
