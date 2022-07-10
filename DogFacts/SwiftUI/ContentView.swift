@@ -32,6 +32,7 @@ struct ContentView: View {
                 DogFactView(text: error.localizedDescription, color: Color.red)
             case .loading, .idle:
                 ProgressView()
+                // TODO patmcg share this padding and frame (somehow) with DogFactView
                     .padding([.top, .leading, .trailing])
                     .frame(height: 200.0, alignment: Alignment.top)
             }
