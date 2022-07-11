@@ -8,7 +8,7 @@
 import Combine
 
 /// View model for the dog facts view
-class DogFactsViewModel {
+class DogFactsViewModel: ObservableObject {
     
     /// The state the dog facts view can take on.
     enum State {
@@ -21,6 +21,7 @@ class DogFactsViewModel {
     /// The current state for the dog facts view; Combine-observable.
     @Published private(set) var state: State = .idle
     
+    /// The backing service to use; could be live or mock 🤷🏻‍♂️
     private let service: DogFactsService
     
     init(service: DogFactsService) {
@@ -28,10 +29,9 @@ class DogFactsViewModel {
     }
     
     /// Triggers a fetch of a new dog fact and updates the state
+    @MainActor
     func fetch() async {
-        
         self.state = .loading
-        
         do {
             let dogFact = try await self.service.fetchDogFact()
             self.state = .loaded(dogFact: dogFact)

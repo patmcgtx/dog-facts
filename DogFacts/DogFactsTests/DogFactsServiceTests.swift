@@ -10,14 +10,14 @@ import XCTest
 
 class DogFactsServiceTests: XCTestCase {
 
-    private var dataFetcher: DogFactsDataFetcherMock?
+    // These are optional because they're initialized in `setUp()`
+    private var mockFetcher: DogFactsDataFetcherMocked?
     private var service: DogFactsService?
     
     override func setUp() async throws {
-        self.dataFetcher = DogFactsDataFetcherMock()
-        if let fetcher = self.dataFetcher {
-            self.service = DogFactsServiceLive(dataFetcher: fetcher)
-        }
+        self.mockFetcher = DogFactsDataFetcherMocked()
+        guard let mockDataFetcher = self.mockFetcher else { XCTFail("Failed to get mock fetcher"); return }
+        self.service = DogFactsServiceFetched(dataFetcher: mockDataFetcher)
     }
 
     func testGoodResponse() async throws {
@@ -25,7 +25,7 @@ class DogFactsServiceTests: XCTestCase {
         let fact = "The earliest dog fossil dates back to nearly 10,000 B.C."
         let json = "{\"facts\":[\"\(fact)\"],\"success\":true}"
         
-        self.dataFetcher?.set(response: json)
+        self.mockFetcher?.apply(response: json)
         
         let result = try await self.service?.fetchDogFact()
         XCTAssertEqual(result, fact)
@@ -33,7 +33,7 @@ class DogFactsServiceTests: XCTestCase {
 
     func testEmptyResponse() async throws {
         
-        self.dataFetcher?.set(response: "")
+        self.mockFetcher?.apply(response: "")
 
         do {
             let _ = try await self.service?.fetchDogFact()
@@ -47,7 +47,7 @@ class DogFactsServiceTests: XCTestCase {
     func testInvalidResponse() async throws {
         
         let json = "{\"invalid\":\"true\"}"
-        self.dataFetcher?.set(response: json)
+        self.mockFetcher?.apply(response: json)
         
         do {
             let _ = try await self.service?.fetchDogFact()
@@ -61,7 +61,7 @@ class DogFactsServiceTests: XCTestCase {
 
     func testThrows() async throws {
         
-        self.dataFetcher?.resultingError = DogFacts.DogFactsError.badURL
+        self.mockFetcher?.mockedError = DogFacts.DogFactsError.badURL
         
         do {
             let _ = try await self.service?.fetchDogFact()

@@ -26,9 +26,6 @@ protocol DogFactsService {
 /// Fetches dog fact raw data
 protocol DogFactsDataFetcher {
     
-    /// The URL to get the raw dog fact data from
-    var urlPath: String { get set }
-    
     /**
      The async/await version 🤩
      - Returns: Raw dog fact data

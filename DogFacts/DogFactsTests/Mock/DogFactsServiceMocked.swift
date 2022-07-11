@@ -9,18 +9,18 @@ import Foundation
 @testable import DogFacts
 
 /// Mockable version of `DogFactsService` for local testing
-class DogFactsServiceMock: DogFactsService {
+class DogFactsServiceMocked: DogFactsService {
     
     /// The data to return in `fetch()`, if any
-    var resultingFact: String?
+    var mockedFact: String?
 
     /// The error to throw in `fetch()`, if any
-    var resultingError: Error? = nil
+    var mockedError: Error? = nil
 
     func fetchDogFact() async throws -> String {
-        if let error = self.resultingError {
+        if let error = self.mockedError {
             throw error
-        } else if let fact = self.resultingFact {
+        } else if let fact = self.mockedFact {
             return fact
         } else {
             throw DogFactsError.noResponse
