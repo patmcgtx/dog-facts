@@ -59,12 +59,11 @@
 		693C9B2A28306A0B00F1CC45 /* DogFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsViewModel.swift; sourceTree = "<group>"; };
 		693C9B2C2830B50600F1CC45 /* DogFactsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsViewModelTests.swift; sourceTree = "<group>"; };
 		693C9B2E2830B59500F1CC45 /* DogFactsServiceMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsServiceMocked.swift; sourceTree = "<group>"; };
-		693FB5372824A19F00BC9697 /* DogFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		693FB5372824A19F00BC9697 /* DogFacts (orig macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DogFacts (orig macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693FB53A2824A19F00BC9697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		693FB53C2824A19F00BC9697 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		693FB53E2824A1A100BC9697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		693FB5412824A1A100BC9697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		693FB5432824A1A100BC9697 /* DogFacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogFacts.entitlements; sourceTree = "<group>"; };
 		693FB54C2824A1A100BC9697 /* DogFactsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsServiceTests.swift; sourceTree = "<group>"; };
 		693FB5682824CA5500BC9697 /* DogFactsServiceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsServiceInterface.swift; sourceTree = "<group>"; };
 		693FB5692824CA5500BC9697 /* DogFactsDataFetcherNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsDataFetcherNetwork.swift; sourceTree = "<group>"; };
@@ -132,7 +131,7 @@
 				691EADFC2877A65A0093A527 /* SwiftUI */,
 				691EAE0A2877A65B0093A527 /* macOS */,
 				693FB54B2824A1A100BC9697 /* DogFactsTests */,
-				693FB5392824A19F00BC9697 /* DogFacts */,
+				693FB5392824A19F00BC9697 /* DogFacts (orig macOS) */,
 				693FB5382824A19F00BC9697 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,7 +139,7 @@
 		693FB5382824A19F00BC9697 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				693FB5372824A19F00BC9697 /* DogFacts.app */,
+				693FB5372824A19F00BC9697 /* DogFacts (orig macOS).app */,
 				691EAE042877A65B0093A527 /* DogFactsSwiftUI.app */,
 				691EAE092877A65B0093A527 /* DogFactsSwiftUI.app */,
 				6989ECFF287D0FAC00174779 /* DogFactsUnitTests.xctest */,
@@ -148,14 +147,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		693FB5392824A19F00BC9697 /* DogFacts */ = {
+		693FB5392824A19F00BC9697 /* DogFacts (orig macOS) */ = {
 			isa = PBXGroup;
 			children = (
-				693FB5432824A1A100BC9697 /* DogFacts.entitlements */,
 				693FB5652824C9F500BC9697 /* App */,
 				693FB5662824CA0C00BC9697 /* UI */,
 			);
-			path = DogFacts;
+			path = "DogFacts (orig macOS)";
 			sourceTree = "<group>";
 		};
 		693FB54B2824A1A100BC9697 /* DogFactsTests */ = {
@@ -244,9 +242,9 @@
 			productReference = 691EAE092877A65B0093A527 /* DogFactsSwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		693FB5362824A19F00BC9697 /* DogFacts */ = {
+		693FB5362824A19F00BC9697 /* DogFacts (orig macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 693FB55C2824A1A100BC9697 /* Build configuration list for PBXNativeTarget "DogFacts" */;
+			buildConfigurationList = 693FB55C2824A1A100BC9697 /* Build configuration list for PBXNativeTarget "DogFacts (orig macOS)" */;
 			buildPhases = (
 				693FB5332824A19F00BC9697 /* Sources */,
 				693FB5342824A19F00BC9697 /* Frameworks */,
@@ -256,9 +254,9 @@
 			);
 			dependencies = (
 			);
-			name = DogFacts;
+			name = "DogFacts (orig macOS)";
 			productName = DogFacts;
-			productReference = 693FB5372824A19F00BC9697 /* DogFacts.app */;
+			productReference = 693FB5372824A19F00BC9697 /* DogFacts (orig macOS).app */;
 			productType = "com.apple.product-type.application";
 		};
 		6989ECFE287D0FAC00174779 /* DogFactsUnitTests */ = {
@@ -317,7 +315,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				693FB5362824A19F00BC9697 /* DogFacts */,
+				693FB5362824A19F00BC9697 /* DogFacts (orig macOS) */,
 				691EAE032877A65B0093A527 /* DogFactsSwiftUI (iOS) */,
 				691EAE082877A65B0093A527 /* DogFactsSwiftUI (macOS) */,
 				6989ECFE287D0FAC00174779 /* DogFactsUnitTests */,
@@ -675,7 +673,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DogFacts/DogFacts.entitlements;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -703,7 +701,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DogFacts/DogFacts.entitlements;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -797,7 +795,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		693FB55C2824A1A100BC9697 /* Build configuration list for PBXNativeTarget "DogFacts" */ = {
+		693FB55C2824A1A100BC9697 /* Build configuration list for PBXNativeTarget "DogFacts (orig macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				693FB55D2824A1A100BC9697 /* Debug */,
