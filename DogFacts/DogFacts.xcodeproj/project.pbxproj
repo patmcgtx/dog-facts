@@ -56,23 +56,9 @@
 		691EAE042877A65B0093A527 /* DogFactsSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogFactsSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		691EAE092877A65B0093A527 /* DogFactsSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogFactsSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		691EAE0B2877A65B0093A527 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		691EAE142877A65C0093A527 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
-		691EAE162877A65C0093A527 /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
-		691EAE202877A65C0093A527 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
-		691EAE222877A65C0093A527 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		693C9B2A28306A0B00F1CC45 /* DogFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsViewModel.swift; sourceTree = "<group>"; };
 		693C9B2C2830B50600F1CC45 /* DogFactsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsViewModelTests.swift; sourceTree = "<group>"; };
 		693C9B2E2830B59500F1CC45 /* DogFactsServiceMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsServiceMocked.swift; sourceTree = "<group>"; };
-		693E0BD02826133200C9F4AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		693E0BD22826133200C9F4AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		693E0BD42826133200C9F4AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		693E0BD72826133200C9F4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		693E0BD92826133300C9F4AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		693E0BDC2826133300C9F4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		693E0BDE2826133300C9F4AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		693E0BE72826133300C9F4AC /* DogFactsMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsMobileTests.swift; sourceTree = "<group>"; };
-		693E0BF12826133300C9F4AC /* DogFactsMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsMobileUITests.swift; sourceTree = "<group>"; };
-		693E0BF32826133300C9F4AC /* DogFactsMobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsMobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		693FB5372824A19F00BC9697 /* DogFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		693FB53A2824A19F00BC9697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		693FB53C2824A19F00BC9697 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +66,6 @@
 		693FB5412824A1A100BC9697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		693FB5432824A1A100BC9697 /* DogFacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogFacts.entitlements; sourceTree = "<group>"; };
 		693FB54C2824A1A100BC9697 /* DogFactsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsServiceTests.swift; sourceTree = "<group>"; };
-		693FB5582824A1A100BC9697 /* DogFactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsUITests.swift; sourceTree = "<group>"; };
 		693FB5682824CA5500BC9697 /* DogFactsServiceInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsServiceInterface.swift; sourceTree = "<group>"; };
 		693FB5692824CA5500BC9697 /* DogFactsDataFetcherNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsDataFetcherNetwork.swift; sourceTree = "<group>"; };
 		693FB56A2824CA5500BC9697 /* DogFactsServiceFetched.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogFactsServiceFetched.swift; sourceTree = "<group>"; };
@@ -140,55 +125,6 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
-		691EAE132877A65C0093A527 /* Tests iOS */ = {
-			isa = PBXGroup;
-			children = (
-				691EAE142877A65C0093A527 /* Tests_iOS.swift */,
-				691EAE162877A65C0093A527 /* Tests_iOSLaunchTests.swift */,
-			);
-			path = "Tests iOS";
-			sourceTree = "<group>";
-		};
-		691EAE1F2877A65C0093A527 /* Tests macOS */ = {
-			isa = PBXGroup;
-			children = (
-				691EAE202877A65C0093A527 /* Tests_macOS.swift */,
-				691EAE222877A65C0093A527 /* Tests_macOSLaunchTests.swift */,
-			);
-			path = "Tests macOS";
-			sourceTree = "<group>";
-		};
-		693E0BCF2826133200C9F4AC /* DogFactsMobile */ = {
-			isa = PBXGroup;
-			children = (
-				693E0BD02826133200C9F4AC /* AppDelegate.swift */,
-				693E0BD22826133200C9F4AC /* SceneDelegate.swift */,
-				693E0BD42826133200C9F4AC /* ViewController.swift */,
-				693E0BD62826133200C9F4AC /* Main.storyboard */,
-				693E0BD92826133300C9F4AC /* Assets.xcassets */,
-				693E0BDB2826133300C9F4AC /* LaunchScreen.storyboard */,
-				693E0BDE2826133300C9F4AC /* Info.plist */,
-			);
-			path = DogFactsMobile;
-			sourceTree = "<group>";
-		};
-		693E0BE62826133300C9F4AC /* DogFactsMobileTests */ = {
-			isa = PBXGroup;
-			children = (
-				693E0BE72826133300C9F4AC /* DogFactsMobileTests.swift */,
-			);
-			path = DogFactsMobileTests;
-			sourceTree = "<group>";
-		};
-		693E0BF02826133300C9F4AC /* DogFactsMobileUITests */ = {
-			isa = PBXGroup;
-			children = (
-				693E0BF12826133300C9F4AC /* DogFactsMobileUITests.swift */,
-				693E0BF32826133300C9F4AC /* DogFactsMobileUITestsLaunchTests.swift */,
-			);
-			path = DogFactsMobileUITests;
-			sourceTree = "<group>";
-		};
 		693FB52E2824A19F00BC9697 = {
 			isa = PBXGroup;
 			children = (
@@ -197,12 +133,6 @@
 				691EAE0A2877A65B0093A527 /* macOS */,
 				693FB54B2824A1A100BC9697 /* DogFactsTests */,
 				693FB5392824A19F00BC9697 /* DogFacts */,
-				693E0BCF2826133200C9F4AC /* DogFactsMobile */,
-				693E0BE62826133300C9F4AC /* DogFactsMobileTests */,
-				693E0BF02826133300C9F4AC /* DogFactsMobileUITests */,
-				691EAE132877A65C0093A527 /* Tests iOS */,
-				691EAE1F2877A65C0093A527 /* Tests macOS */,
-				693FB5552824A1A100BC9697 /* DogFactsUITests */,
 				693FB5382824A19F00BC9697 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -236,14 +166,6 @@
 				693C9B2C2830B50600F1CC45 /* DogFactsViewModelTests.swift */,
 			);
 			path = DogFactsTests;
-			sourceTree = "<group>";
-		};
-		693FB5552824A1A100BC9697 /* DogFactsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				693FB5582824A1A100BC9697 /* DogFactsUITests.swift */,
-			);
-			path = DogFactsUITests;
 			sourceTree = "<group>";
 		};
 		693FB5652824C9F500BC9697 /* App */ = {
@@ -503,22 +425,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		693E0BD62826133200C9F4AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				693E0BD72826133200C9F4AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		693E0BDB2826133300C9F4AC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				693E0BDC2826133300C9F4AC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		693FB5402824A1A100BC9697 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
