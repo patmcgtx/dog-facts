@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import DogFacts
+@testable import DogFactsSwiftUI
 
 /// Mockable version of `DogFactsService` for local testing
 class DogFactsServiceMocked: DogFactsService {

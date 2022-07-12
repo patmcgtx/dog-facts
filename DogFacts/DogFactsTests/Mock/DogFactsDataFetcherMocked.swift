@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import DogFacts
+@testable import DogFactsSwiftUI
 
 /// A mockable version of a `DogFactsDataFetcher` for local testing
 class DogFactsDataFetcherMocked: DogFactsDataFetcher {

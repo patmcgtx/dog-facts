@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import DogFacts
+@testable import DogFactsSwiftUI
 
 class DogFactsServiceTests: XCTestCase {
 
@@ -61,12 +61,12 @@ class DogFactsServiceTests: XCTestCase {
 
     func testThrows() async throws {
         
-        self.mockFetcher?.mockedError = DogFacts.DogFactsError.badURL
+        self.mockFetcher?.mockedError = DogFactsSwiftUI.DogFactsError.badURL
         
         do {
             let _ = try await self.service?.fetchDogFact()
             XCTFail("Unexpected success")
-        } catch DogFacts.DogFactsError.badURL {
+        } catch DogFactsSwiftUI.DogFactsError.badURL {
             print("Got badURL error as expected")
         } catch {
             XCTFail("Unexpected error type")

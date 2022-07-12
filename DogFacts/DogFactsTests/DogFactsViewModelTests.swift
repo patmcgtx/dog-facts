@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import DogFacts
+@testable import DogFactsSwiftUI
 
 class DogFactsViewModelTests: XCTestCase {
 
