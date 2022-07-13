@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		690753D1287E73F9004BB38F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 690753D0287E73F9004BB38F /* ComposableArchitecture */; };
+		690753D4287E74E3004BB38F /* DogFactsComponsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690753D3287E74E3004BB38F /* DogFactsComponsable.swift */; };
+		690753D5287E74E3004BB38F /* DogFactsComponsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690753D3287E74E3004BB38F /* DogFactsComponsable.swift */; };
+		690753DC287E77C2004BB38F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 690753DB287E77C2004BB38F /* ComposableArchitecture */; };
+		690753DE287E77D5004BB38F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 690753DD287E77D5004BB38F /* ComposableArchitecture */; };
 		69105BE9287B05FD007BF0D0 /* GlobalStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69105BE8287B05FD007BF0D0 /* GlobalStyling.swift */; };
 		69105BEA287B05FD007BF0D0 /* GlobalStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69105BE8287B05FD007BF0D0 /* GlobalStyling.swift */; };
 		691EAE242877A65C0093A527 /* DogFactsSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691EADFD2877A65A0093A527 /* DogFactsSwiftUIApp.swift */; };
@@ -50,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690753D3287E74E3004BB38F /* DogFactsComponsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsComponsable.swift; sourceTree = "<group>"; };
 		69105BE8287B05FD007BF0D0 /* GlobalStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyling.swift; sourceTree = "<group>"; };
 		691EADFD2877A65A0093A527 /* DogFactsSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsSwiftUIApp.swift; sourceTree = "<group>"; };
 		691EADFE2877A65A0093A527 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690753DE287E77D5004BB38F /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690753DC287E77C2004BB38F /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +114,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690753D2287E74B9004BB38F /* Componsable Arch */ = {
+			isa = PBXGroup;
+			children = (
+				690753D3287E74E3004BB38F /* DogFactsComponsable.swift */,
+			);
+			path = "Componsable Arch";
+			sourceTree = "<group>";
+		};
+		690753DA287E77C2004BB38F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		691EADFC2877A65A0093A527 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,10 +153,12 @@
 			children = (
 				693FB5672824CA3100BC9697 /* Service */,
 				691EADFC2877A65A0093A527 /* SwiftUI */,
+				690753D2287E74B9004BB38F /* Componsable Arch */,
 				691EAE0A2877A65B0093A527 /* macOS */,
 				693FB54B2824A1A100BC9697 /* DogFactsTests */,
 				693FB5392824A19F00BC9697 /* DogFacts (orig macOS) */,
 				693FB5382824A19F00BC9697 /* Products */,
+				690753DA287E77C2004BB38F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,8 +245,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				690753D7287E7578004BB38F /* PBXTargetDependency */,
 			);
 			name = "DogFactsSwiftUI (iOS)";
+			packageProductDependencies = (
+				690753DD287E77D5004BB38F /* ComposableArchitecture */,
+			);
 			productName = "DogFactsSwiftUI (iOS)";
 			productReference = 691EAE042877A65B0093A527 /* DogFactsSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -238,8 +266,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				690753D9287E7582004BB38F /* PBXTargetDependency */,
 			);
 			name = "DogFactsSwiftUI (macOS)";
+			packageProductDependencies = (
+				690753DB287E77C2004BB38F /* ComposableArchitecture */,
+			);
 			productName = "DogFactsSwiftUI (macOS)";
 			productReference = 691EAE092877A65B0093A527 /* DogFactsSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -374,6 +406,7 @@
 			files = (
 				691EAE262877A65C0093A527 /* ContentView.swift in Sources */,
 				69105BE9287B05FD007BF0D0 /* GlobalStyling.swift in Sources */,
+				690753D4287E74E3004BB38F /* DogFactsComponsable.swift in Sources */,
 				691EAE3B2877E3560093A527 /* DogFactsViewModel.swift in Sources */,
 				691EAE372877E3450093A527 /* DogFactsServiceFetched.swift in Sources */,
 				691EAE392877E34B0093A527 /* DogFactsDataFetcherNetwork.swift in Sources */,
@@ -388,6 +421,7 @@
 			files = (
 				691EAE272877A65C0093A527 /* ContentView.swift in Sources */,
 				69105BEA287B05FD007BF0D0 /* GlobalStyling.swift in Sources */,
+				690753D5287E74E3004BB38F /* DogFactsComponsable.swift in Sources */,
 				691EAE3C2877E3570093A527 /* DogFactsViewModel.swift in Sources */,
 				691EAE382877E3460093A527 /* DogFactsServiceFetched.swift in Sources */,
 				691EAE3A2877E34C0093A527 /* DogFactsDataFetcherNetwork.swift in Sources */,
@@ -423,6 +457,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		690753D7287E7578004BB38F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 690753D6287E7578004BB38F /* ComposableArchitecture */;
+		};
+		690753D9287E7582004BB38F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 690753D8287E7582004BB38F /* ComposableArchitecture */;
+		};
 		6989ED04287D0FAD00174779 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 691EAE032877A65B0093A527 /* DogFactsSwiftUI (iOS) */;
@@ -836,6 +878,26 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		690753D0287E73F9004BB38F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 690753CF287E73F9004BB38F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		690753D6287E7578004BB38F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 690753CF287E73F9004BB38F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		690753D8287E7582004BB38F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 690753CF287E73F9004BB38F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		690753DB287E77C2004BB38F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 690753CF287E73F9004BB38F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		690753DD287E77D5004BB38F /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 690753CF287E73F9004BB38F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
