@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "693FB5362824A19F00BC9697"
-               BuildableName = "DogFacts (orig Mac).app"
+               BuildableName = "DogFacts (orig macOS).app"
                BlueprintName = "DogFacts (orig macOS)"
                ReferencedContainer = "container:DogFacts.xcodeproj">
             </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "693FB5362824A19F00BC9697"
-            BuildableName = "DogFacts (orig Mac).app"
+            BuildableName = "DogFacts (orig macOS).app"
             BlueprintName = "DogFacts (orig macOS)"
             ReferencedContainer = "container:DogFacts.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "693FB5362824A19F00BC9697"
-            BuildableName = "DogFacts (orig Mac).app"
+            BuildableName = "DogFacts (orig macOS).app"
             BlueprintName = "DogFacts (orig macOS)"
             ReferencedContainer = "container:DogFacts.xcodeproj">
          </BuildableReference>
