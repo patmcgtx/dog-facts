@@ -25,6 +25,8 @@ struct DogFactsEnvironment {
 let refreshableReducer = Reducer<
     DogFactsState,
     DogFactsAction,
-    DogFactsEnvironment> { state, action, environment in
+    DogFactsEnvironment
+> { state, action, environment in
+    // TODO implement state -> actions -> effect
     return .none
 }
